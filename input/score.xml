@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Downloaded from https://musescore.com/martindeboer/preludebach -->
+<!-- Downloaded originally from https://musescore.com/martindeboer/preludebach (before correcting some wrong notes!) -->
 <!--
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 -->
@@ -1452,7 +1452,7 @@
         </note>
       <note default-x="92.27" default-y="-90.00">
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>3</duration>
@@ -1468,7 +1468,7 @@
         </note>
       <note default-x="183.88" default-y="-90.00">
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>4</duration>
@@ -1493,7 +1493,7 @@
         </note>
       <note default-x="336.56" default-y="-90.00">
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>3</duration>
@@ -1509,7 +1509,7 @@
         </note>
       <note default-x="428.17" default-y="-90.00">
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>4</octave>
           </pitch>
         <duration>4</duration>
@@ -7410,7 +7410,7 @@
         </note>
       <note default-x="429.84" default-y="-40.00">
         <pitch>
-          <step>E</step>
+          <step>F</step>
           <octave>4</octave>
           </pitch>
         <duration>1</duration>
@@ -7449,7 +7449,7 @@
         </note>
       <note default-x="521.71" default-y="-40.00">
         <pitch>
-          <step>E</step>
+          <step>F</step>
           <octave>4</octave>
           </pitch>
         <duration>1</duration>

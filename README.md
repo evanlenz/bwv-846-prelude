@@ -1,7 +1,7 @@
 # An experiment in musical transformations
 
 This little project is an attempt to automate some analysis I was doing of Bach's
-[Prelude in C Major (BWV 846)](https://musescore.com/martindeboer/preludebach)
+[Prelude in C Major (BWV 846)](https://musescore.com/user/30417879/scores/6525950/s/4NAPQ7?share=copy_link)
 by transforming a MusicXML representation of the piece into separate summary documents,
 each of which is itself a MusicXML file.
 
@@ -16,11 +16,14 @@ Sure. You can see and listen to them here on my MuseScore.com account (going fro
 bottom to top):
 
   * [summary-bass-2](https://musescore.com/user/30417879/scores/6525918/s/idZYcU?share=copy_link)
-  * [summary-bass-1](https://musescore.com/user/30417879/scores/6525917/s/qs60YA?share=copy_link)
+  * [summary-bass-1](https://musescore.com/user/30417879/scores/6525942/s/tg83V2?share=copy_link)
   * [summary-treble-1](https://musescore.com/user/30417879/scores/6525905/s/7DB0ht?share=copy_link)
   * [summary-treble-2](https://musescore.com/user/30417879/scores/6525914/s/fyL5my?share=copy_link)
   * [summary-treble-3](https://musescore.com/user/30417879/scores/6525916/s/L0jHNN?share=copy_link)
-  * [summary-chords](https://musescore.com/user/30417879/scores/6525919/s/ItHNZx?share=copy_link)
+  * [summary-chords](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
+
+And [here's the original score](https://musescore.com/user/30417879/scores/6525950/s/4NAPQ7?share=copy_link)
+for comparison.
 
 ## Okay, tell me more
 These musical transformations represent a simple *ad hoc* example of the kinds of

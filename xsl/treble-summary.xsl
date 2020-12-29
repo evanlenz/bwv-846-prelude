@@ -9,7 +9,7 @@
 
   <!-- Preserve just the nth note of each measure -->
   <xsl:template match="note[pitch][$note-position]">
-    <xsl:call-template name="copy"/>
+    <xsl:apply-templates mode="copy" select="."/>
   </xsl:template>
 
 </xsl:stylesheet>

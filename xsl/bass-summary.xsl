@@ -9,7 +9,7 @@
 
   <!-- Preserve just the first note of each voice (signified by following a <backup> element) -->
   <xsl:template match="note[pitch][preceding-sibling::*[not(self::note/rest)][1][self::backup]][$backup-position]">
-    <xsl:call-template name="copy"/>
+    <xsl:apply-templates mode="copy" select="."/>
   </xsl:template>
 
 </xsl:stylesheet>

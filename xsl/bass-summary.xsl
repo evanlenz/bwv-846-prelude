@@ -12,4 +12,10 @@
     <xsl:apply-templates mode="copy" select="."/>
   </xsl:template>
 
+  <!-- The last measure uses chords and just one backup, so use different rules to get the bass notes for it -->
+  <xsl:template match="measure[last()]/note[preceding-sibling::backup][position() eq $backup-position]" priority="1"/>
+  <xsl:template match="measure[last()]/note[preceding-sibling::backup][position() ne $backup-position]" priority="1">
+    <xsl:apply-templates mode="copy" select="."/>
+  </xsl:template>
+
 </xsl:stylesheet>

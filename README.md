@@ -21,6 +21,8 @@ bottom to top):
   * [summary-treble-2](https://musescore.com/user/30417879/scores/6525914/s/fyL5my?share=copy_link)
   * [summary-treble-3](https://musescore.com/user/30417879/scores/6525916/s/L0jHNN?share=copy_link)
   * [summary-chords](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
+  * [summary-chords](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
+  * [summary-new-notes](https://musescore.com/user/30417879/scores/6904359/s/JFJ38I)
 
 And [here's the original score](https://musescore.com/user/30417879/scores/6525950/s/4NAPQ7?share=copy_link)
 for comparison.
@@ -54,6 +56,7 @@ respectively in:
 Finally, the results of the other summaries are combined into chords using:
 
   * [chord-summary.xsl](xsl/chord-summary.xsl)
+  * [new-notes-summary.xsl](xsl/new-notes-summary.xsl)
 
 ## Generating the results
 To generate the results, invoke run.sh or run.bat after putting the

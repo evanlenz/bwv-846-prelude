@@ -9,7 +9,7 @@
   <xsl:variable name="root" select="."/>
 
   <!-- Generate the treble and bass summaries -->
-  <xsl:variable name="summaries" as="element(result)+">
+  <xsl:variable name="one-voice-summaries" as="element(result)+">
     <xsl:for-each select="1 to 3">
       <result href="output/summary-treble-{.}.musicxml">
         <xsl:sequence select="my:transform(
@@ -28,20 +28,40 @@
     </xsl:for-each>
   </xsl:variable>
 
+  <!-- Process the treble and bass summaries to produce the chord summary -->
+  <xsl:variable name="chord-summary" as="element(result)">
+    <result href="output/summary-chords.musicxml">
+      <xsl:sequence select="my:transform(
+                              'chord-summary.xsl',
+                              map{ xs:QName('one-voice-summaries'):$one-voice-summaries }
+                            )"/>
+    </result>
+  </xsl:variable>
+
+  <!-- Process the chord summary to produce the new-notes summary -->
+  <xsl:variable name="new-notes-summary" as="element(result)">
+    <result href="output/summary-new-notes.musicxml">
+      <xsl:variable name="source-doc" as="document-node()">
+        <xsl:document>
+          <xsl:sequence select="$chord-summary/node()"/>
+        </xsl:document>
+      </xsl:variable>
+      <xsl:sequence select="transform(
+                              map{
+                                'stylesheet-location':'new-notes-summary.xsl',
+                                'source-node':$source-doc
+                              }
+                            )?output"/>
+    </result>
+  </xsl:variable>
+
   <xsl:template match="/">
-    <!-- Output the treble and bass summaries -->
-    <xsl:for-each select="$summaries">
+    <!-- Output the result of every transformation -->
+    <xsl:for-each select="$one-voice-summaries, $chord-summary, $new-notes-summary">
       <xsl:result-document href="{@href}">
         <xsl:sequence select="node()"/>
       </xsl:result-document>
     </xsl:for-each>
-    <!-- Process the treble and bass summaries to produce the chord summary -->
-    <xsl:result-document href="output/summary-chords.musicxml">
-      <xsl:sequence select="my:transform(
-                              'chord-summary.xsl',
-                              map{ xs:QName('summaries'):$summaries }
-                            )"/>
-    </xsl:result-document>
   </xsl:template>
 
   <!-- Get the result of an XSLT transformation against the source document -->

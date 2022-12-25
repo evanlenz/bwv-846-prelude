@@ -15,14 +15,20 @@ fingers of the left hand (bass clef) and three of the right hand (treble clef).
 Sure. You can see and listen to them here on my MuseScore.com account (going from
 bottom to top):
 
-  * [summary-bass-2](https://musescore.com/user/30417879/scores/6525918/s/idZYcU?share=copy_link)
-  * [summary-bass-1](https://musescore.com/user/30417879/scores/6525942/s/tg83V2?share=copy_link)
-  * [summary-treble-1](https://musescore.com/user/30417879/scores/6525905/s/7DB0ht?share=copy_link)
-  * [summary-treble-2](https://musescore.com/user/30417879/scores/6525914/s/fyL5my?share=copy_link)
-  * [summary-treble-3](https://musescore.com/user/30417879/scores/6525916/s/L0jHNN?share=copy_link)
-  * [summary-chords](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
-  * [summary-chords](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
-  * [summary-new-notes](https://musescore.com/user/30417879/scores/6904359/s/JFJ38I)
+  * [summary-1](https://musescore.com/user/30417879/scores/6525918/s/idZYcU?share=copy_link)
+  * [summary-2](https://musescore.com/user/30417879/scores/6525942/s/tg83V2?share=copy_link)
+  * [summary-3](https://musescore.com/user/30417879/scores/6525905/s/7DB0ht?share=copy_link)
+  * [summary-4](https://musescore.com/user/30417879/scores/6525914/s/fyL5my?share=copy_link)
+  * [summary-5](https://musescore.com/user/30417879/scores/6525916/s/L0jHNN?share=copy_link)
+  * [summary-12345](https://musescore.com/user/30417879/scores/6525946/s/jHgq3P?share=copy_link)
+  * [summary-12345.pitch-changes](https://musescore.com/user/30417879/scores/6904359/s/JFJ38I)
+
+Now the script will additionally output every possible combination of voices, plus the
+pitch-changes version of each, for a total of 62 output files. For example, the output also includes:
+
+  * summary-12 (voices 1 and 2 together)
+  * summary-145.pitch-changes (voices 1, 4, and 5 together, with repeated notes turned into tied notes)
+  * etc.
 
 And [here's the original score](https://musescore.com/user/30417879/scores/6525950/s/4NAPQ7?share=copy_link)
 for comparison.
@@ -56,7 +62,7 @@ respectively in:
 Finally, the results of the other summaries are combined into chords using:
 
   * [chord-summary.xsl](xsl/chord-summary.xsl)
-  * [new-notes-summary.xsl](xsl/new-notes-summary.xsl)
+  * [pitch-changes-summary.xsl](xsl/pitch-changes-summary.xsl)
 
 ## Generating the results
 To generate the results, invoke run.sh or run.bat after putting the

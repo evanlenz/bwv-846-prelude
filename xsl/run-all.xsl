@@ -120,6 +120,9 @@
       <xsl:when test="$k eq count($items)">
         <xsl:sequence select="[$items]"/>
       </xsl:when>
+      <xsl:when test="$k eq 1">
+        <xsl:sequence select="$items ! array{.}"/>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="first-item" select="$items[1]"/>
         <xsl:variable name="rest" select="$items[position() gt 1]"/>

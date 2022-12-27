@@ -70,9 +70,22 @@
     </xsl:for-each>
   </xsl:variable>
 
+  <!-- Concatenate all of the above into one score, the master sequence -->
+  <xsl:variable name="master-summary" as="element(result)">
+    <result file-stem="master-summary">
+      <xsl:sequence select="my:transform(
+                              'concatenate-scores.xsl',
+                              map{
+                                xs:QName('input-scores'):
+                                ($one-voice-summaries, $chord-summaries, $pitch-changes-summaries)
+                              }
+                            )"/>
+    </result>
+  </xsl:variable>
+
   <xsl:template match="/">
     <!-- Output the result of every transformation -->
-    <xsl:for-each select="$one-voice-summaries, $chord-summaries, $pitch-changes-summaries">
+    <xsl:for-each select="$one-voice-summaries, $chord-summaries, $pitch-changes-summaries, $master-summary">
       <xsl:result-document href="{$output-dir}/{@file-stem}.musicxml">
         <xsl:sequence select="node()"/>
       </xsl:result-document>

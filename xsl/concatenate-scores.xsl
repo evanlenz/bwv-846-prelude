@@ -12,8 +12,32 @@
     <xsl:apply-templates select="$input-scores ! score-partwise/part/measure"/>
   </xsl:template>
 
-  <!--
-  <xsl:template match="measure/@number"/>
-  -->
+  <!-- Annotate where it came from -->
+  <xsl:template mode="before" match="measure[1]">
+    <xsl:comment>
+      <xsl:value-of select="ancestor::result/@file-stem"/>
+    </xsl:comment>
+  </xsl:template>
+
+  <!-- Add a silent measure at the end of each summary -->
+  <xsl:template mode="after" match="measure[last()]">
+    <measure number="{@number + 1}">
+      <note>
+        <rest/>
+        <duration>16</duration>
+        <type>whole</type>
+        <staff>1</staff>
+      </note>
+      <backup>
+        <duration>16</duration>
+      </backup>
+      <note>
+        <rest/>
+        <duration>16</duration>
+        <type>whole</type>
+        <staff>2</staff>
+      </note>
+    </measure>
+  </xsl:template>
 
 </xsl:stylesheet>

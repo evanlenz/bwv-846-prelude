@@ -9,7 +9,7 @@
   <xsl:import href="identity.xsl"/>
 
   <xsl:template mode="content" match="part">
-    <xsl:apply-templates select="$input-scores/score-partwise/part/measure"/>
+    <xsl:apply-templates select="$input-scores ! score-partwise/part/measure"/>
   </xsl:template>
 
   <!--

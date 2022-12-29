@@ -73,11 +73,16 @@
   <!-- Concatenate all of the above into one score, the master sequence -->
   <xsl:variable name="master-summary" as="element(result)">
     <result file-stem="master-summary">
+      <xsl:variable name="sorted-summaries" as="element(result)+">
+        <xsl:for-each-group select="$one-voice-summaries, $chord-summaries, $pitch-changes-summaries"
+                            group-by="replace(@file-stem, '.pitch-changes', '')">
+          <xsl:sequence select="current-group()"/>
+        </xsl:for-each-group>
+      </xsl:variable>
       <xsl:sequence select="my:transform(
                               'concatenate-scores.xsl',
                               map{
-                                xs:QName('input-scores'):
-                                ($one-voice-summaries, $chord-summaries, $pitch-changes-summaries)
+                                xs:QName('input-scores'):$sorted-summaries
                               }
                             )"/>
     </result>
